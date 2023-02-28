@@ -25,18 +25,26 @@ function App({ value, onIncrement, onDecrement }: Props) {
 
   return (
     <div className="App">
-      Clicked : {counter} times
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul>
+      <div style={{ marginBottom: "50px" }}>
+        Clicked : {counter} times
+        <button onClick={onIncrement}>+</button>
+        <button onClick={onDecrement}>-</button>
+      </div>
       <form onSubmit={addTodo}>
         <input type="text" value={todoValue} onChange={handleChange} />
         <input type="submit" />
       </form>
+      <ul>
+        {todos.map((todo, index) => (
+          <div
+            style={{ display: "flex", justifyContent: "center", gap: "10px" }}
+          >
+            <li style={{ textAlign: "center" }} key={index}>
+              {todo}
+            </li>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 }
