@@ -5,7 +5,7 @@ const counter = (state = 0, action: { type: string }) => {
     case "DECREMENT":
       return state - 1;
     default:
-      break;
+      return state;
   }
 };
 
